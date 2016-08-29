@@ -10,7 +10,7 @@
 - 怎么配置路由?
 - ...
 
-这篇文档梳理了基于 [dva-cli](https://github.com/dvajs/dva-cli) 使用 [dva](https://github.com/dvajs/dva) 的最小知识集，让你可以顺利地创建类似 [dva-hackernews](https://github.com/dvajs/dva-hackernews) 的应用，并且不需要掌握额外的冗余的知识。
+这篇文档梳理了基于 [dva-cli](https://github.com/dvajs/dva-cli) 使用 [dva](https://github.com/dvajs/dva) 的最小知识集，让你可以用最少的时间掌握创建类似 [dva-hackernews](https://github.com/dvajs/dva-hackernews) 的全部知识，并且不需要掌握额外的冗余的知识。
 
 ## 目录
 
