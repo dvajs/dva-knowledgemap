@@ -1,5 +1,20 @@
 
-包含使用 dva 的最小知识集。
+不知大家学 react 或 dva 时会不会有这样的疑惑：
+
+- es6 特性那么多，我需要全部学会吗?
+- react component 有 3 种写法，我需要全部学会吗?
+- reducer 的增删改应该怎么写?
+- 怎么做全局/局部的错误处理?
+- 怎么发异步请求?
+- 怎么处理复杂的异步业务逻辑?
+- 怎么配置路由?
+- ...
+
+这篇文档梳理了基于 [dva-cli](https://github.com/dvajs/dva-cli) 使用 [dva](https://github.com/dvajs/dva) 的最小知识集，让你可以顺利地创建类似 [dva-hackernews](https://github.com/dvajs/dva-hackernews) 的应用，并且不需要掌握额外的冗余的知识。
+
+## 目录
+
+TODO
 
 ## JavaScript 语言
 
@@ -492,6 +507,5 @@ function parseErrorMessage({ data }) {
 ## 工具
 
 ### 通过 dva-cli 创建项目
-
 
 
