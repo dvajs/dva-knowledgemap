@@ -707,11 +707,37 @@ if (match) {
 
 ### Redux Middleware
 
+比如要添加 redux-logger 中间件：
+
+```javascript
+import createLogger from 'redux-logger';
+const app = dva({
+  onAction: createLogger(),
+});
+```
+
+注：onAction 支持数组，可同时传入多个中间件。
+
 ### history
 
 #### 切换 hsitory 为 browserHistory
 
+```javascript
+import { browserHistory } from 'dva/router';
+const app = dva({
+  history: browserHistory,
+});
+```
+
 #### 去除 hashHistory 下的 _k 查询参数
+
+```javascript
+import { useRouterHistory } from 'dva/router';
+import { createHashHistory } from 'history';
+const app = dva({
+  history: useRouterHistory(createHashHistory)({ queryKey: false }),
+});
+```
 
 ## 工具
 
