@@ -652,9 +652,42 @@ function parseErrorMessage({ data }) {
 
 ## Subscription
 
+`subscriptions` 是订阅，用于订阅一个数据源，然后根据需要 dispatch 相应的 action。数据源可以是当前的时间、服务器的 websocket 连接、keyboard 输入、geolocation 变化、history 路由变化等等。格式为 `({ dispatch, history }) => unsubscribe` 。
+
 ### 异步数据初始化
 
+比如：当用户进入 `/users` 页面时，触发 action `users/fetch` 加载用户数据。
+
+```javascript
+app.model({
+  subscriptions: {
+    setup({ dispatch, history }) {
+      history.listen(({ pathname }) => {
+        if (pathname === '/users') {
+          dispatch({
+            type: 'users/fetch',
+          });
+        }
+      });
+    },
+  },
+});
+```
+
 #### `path-to-regexp` Package
+
+如果 url 规则比较复杂，比如 `/users/:userId/search`，那么匹配和 userId 的获取都会比较麻烦。这是推荐用 [path-to-regexp](https://github.com/pillarjs/path-to-regexp) 简化这部分逻辑。
+
+```javascript
+import pathToRegexp from 'path-to-regexp';
+
+// in subscription
+const match = pathToRegexp('/users/:userId/search').exec(pathname);
+if (match) {
+  const userId = match[1];
+  // dispatch action with userId
+}
+```
 
 ## Router
 
