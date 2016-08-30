@@ -397,11 +397,62 @@ App.propTypes = {
 
 ### CSS Modules
 
-#### 定义 CSS
+<img src="https://zos.alipayobjects.com/rmsportal/mHVRpjNYhVuFdsS.png" width="150" style="background:#fff;" />
 
-#### 在 js 里引用 CSS
+#### 理解 CSS Modules
+
+一张图理解 CSS Modules 的工作原理：
+
+![](https://zos.alipayobjects.com/rmsportal/SWBwWTbZKqxwEPq.png)
+
+`button` class 在构建之后会被重命名为 `ProductList_button_1FU0u` 。`button` 是 local name，而 `ProductList_button_1FU0u` 是 global name 。**你可以用简短的描述性名字，而不需要关心命名冲突问题。**
+
+然后你要做的全部事情就是在 css/less 文件里写 `.button {...}`，并在组件里通过 `styles.button` 来引用他。
+
+#### 定义全局 CSS
+
+CSS Modules 默认是局部作用域的，想要声明一个全局规则，可用 `:global` 语法。
+
+比如：
+
+```css
+.title {
+  color: red;
+}
+:global(.title) {
+  color: green;
+}
+```
+
+然后在引用的时候：
+
+```javascript
+<App className={styles.title} /> // red
+<App className="title" />        // green
+```
 
 #### `classnames` Package
+
+在一些复杂的场景中，一个元素可能对应多个 className，而每个 className 又基于一些条件来决定是否出现。这时，[classnames](https://github.com/JedWatson/classnames) 这个库就非常有用。
+
+```javascript
+import classnames from 'classnames';
+const App = (props) => {
+  const cls = classnames({
+    btn: true,
+    btnLarge: props.type === 'submit',
+    btnSmall: props.type === 'edit',
+  });
+  return <div className={ cls } />;
+}
+```
+
+这样，传入不同的 type 给 App 组件，就会返回不同的 className 组合：
+
+```javascript
+<App type="submit" /> // btn btnLarge
+<App type="edit" />   // btn btnSmall
+```
 
 ## Reducer
 
