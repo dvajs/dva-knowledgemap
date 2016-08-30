@@ -10,7 +10,7 @@
 - 怎么配置路由?
 - ...
 
-这篇文档梳理了基于 [dva-cli](https://github.com/dvajs/dva-cli) 使用 [dva](https://github.com/dvajs/dva) 的最小知识集，让你可以用最少的时间掌握创建类似 [dva-hackernews](https://github.com/dvajs/dva-hackernews) 的全部知识，并且不需要掌握额外的冗余的知识。
+这篇文档梳理了基于 [dva-cli](https://github.com/dvajs/dva-cli) 使用 [dva](https://github.com/dvajs/dva) 的最小知识集，让你可以用最少的时间掌握创建类似 [dva-hackernews](https://github.com/dvajs/dva-hackernews) 的全部知识，并且不需要掌握额外的冗余知识。
 
 ## 目录
 
@@ -247,6 +247,32 @@ app.model({
 ## React Component
 
 ###  Stateless Functional Components
+
+React Component 有 3 种定义方式，分别是 `createElement`, `class` 和 `Stateless Functional Component`。推荐尽量使用最后一种，保持简洁和无状态。这是函数，不是 Object，没有 `this` 作用域，是 pure function 。
+
+比如定义 App Component 。
+
+```javascript
+function App(props) {
+  function handleClick() {
+    props.dispatch({ type: 'app/create' });
+  }
+  return <div onClick={handleClick}>${props.name}</div>
+}
+```
+
+等同于：
+
+```javascript
+class App extends React.Componnet {
+  handleClick() {
+    this.props.dispatch({ type: 'app/create' });
+  }
+  render() {
+    return <div onClick={this.handleClick.bind(this)}>${this.props.name}</div>
+  }
+} `
+```
 
 ### JSX
 
