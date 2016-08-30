@@ -693,15 +693,57 @@ if (match) {
 
 ### Config with JSX Element (router.js)
 
-#### Route, Redirect, IndexRoute, IndexRedirect
+```javascript
+<Route path="/" component={App}>
+  <Route path="accounts" component={Accounts}/>
+  <Route path="statements" component={Statements}/>
+</Route>
+```
+
+详见：[react-router](https://github.com/reactjs/react-router/blob/master/docs/guides/RouteConfiguration.md)
 
 ### Route Components
 
+Route Components 是指 `./src/routes/` 目录下的文件，他们是 `./src/router.js` 里匹配的 Component。
+
 #### 通过 connect 绑定数据
+
+比如：
+
+```javascript
+import { connect } from 'dva';
+function App() {}
+
+function mapStateToProps(state, ownProps) {
+  return {
+    users: state.users,
+  };
+}
+export default connect(mapStateToProps)(App);
+```
+
+然后在 App 里就有了 `dispatch` 和 `users` 两个属性。
 
 #### Injected Props (e.g. location)
 
+Route Component 会有额外的 props 用以获取路由信息。
+
+- location
+- params
+- children
+
+更多详见：[react-router](https://github.com/reactjs/react-router/blob/master/docs/API.md#injected-props)
+
 ### 基于 action 进行页面跳转
+
+```javascript
+import { routerRedux } from 'dva/router';
+
+// In Effects
+yield put(routerRedux.push('/logout'));
+```
+
+除 `push(location)` 外还有更多方法，详见 [react-router-redux](https://github.com/reactjs/react-router-redux#pushlocation-replacelocation-gonumber-goback-goforward)
 
 ## dva 配置
 
