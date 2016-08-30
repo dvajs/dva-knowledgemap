@@ -201,6 +201,8 @@ const d = 4;
 const ret = { ...foo, ...bar, d };  // { a:1, b:3, c:2, d:4 }
 ```
 
+此外，在 JSX 中 Spread Operator 还可用于扩展 props，详见 [Spread Attributes](#spread-attributes)。
+
 ### Promises
 
 Promise 用于更优雅地处理异步请求。比如发起异步请求：
@@ -361,11 +363,37 @@ const attrs = {
 
 ### Props
 
+数据处理在 React 中是非常重要的概念之一，分别可以通过 props, state 和 context 来处理数据。而在 dva 应用里，你只需关心 props 。
+
 #### propTypes
+
+JavaScript 是弱类型语言，所以请尽量声明 propTypes 对 props 进行校验，以减少不必要的问题。
+
+```javascript
+function App(props) {
+  return <div>{props.name}</div>;
+}
+App.propTypes = {
+  name: React.PropTypes.string.isRequired,
+};
+```
+
+内置的 prop type 有：
+
+- PropTypes.array
+- PropTypes.bool
+- PropTypes.func
+- PropTypes.number
+- PropTypes.object
+- PropTypes.string
 
 #### 往下传数据
 
+![](https://zos.alipayobjects.com/rmsportal/NAzeMyUoPMqxfRv.png)
+
 #### 往上传数据
+
+![](https://zos.alipayobjects.com/rmsportal/fiKKgDGuEJfSvxv.png)
 
 ### CSS Modules
 
