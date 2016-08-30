@@ -717,4 +717,22 @@ if (match) {
 
 ### 通过 dva-cli 创建项目
 
+先安装 dva-cli 。
+
+```bash
+$ npm install dva-cli -g
+```
+
+然后创建项目。
+
+```bash
+$ dva new myapp
+```
+
+最后，进入目录并启动。
+
+```bash
+$ cd myapp
+$ npm start
+```
 
