@@ -271,22 +271,93 @@ class App extends React.Componnet {
   render() {
     return <div onClick={this.handleClick.bind(this)}>${this.props.name}</div>
   }
-} `
+}
 ```
 
 ### JSX
 
 #### Component 嵌套
 
+类似 HTML，JSX 里可以给组件添加子组件。
+
+```html
+<App>
+  <Header />
+  <MainContent />
+  <Footer />
+</App>
+```
+
 #### className
 
-#### 注释
+`class` 是保留词，所以添加样式时，需用 `className` 代替 `class` 。
+
+```html
+<h1 className="fancy">Hello dva</h1>
+```
 
 #### JavaScript 表达式
 
+JavaScript 表达式需要用 `{}` 括起来，会执行并返回结果。
+
+比如：
+
+```javascript
+<h1>{ this.props.title }</h1>
+```
+
 #### Mapping Arrays to JSX
 
+可以把数组隐射为 JSX 元素列表。
+
+```javascript
+<ul>
+  { this.props.todos.map((todo, i) => <li key={i}>{todo}</li>) }
+</ul>
+```
+
+#### 注释
+
+尽量别用 `//` 做单行注释。
+
+```javascript
+<h1>
+  {/* multiline comment */}
+  {/*
+    multi
+    line
+    comment
+    */}
+  {
+    // single line
+  }
+  Hello
+</h1>
+```
+
 #### Spread Attributes
+
+这是 JSX 从 ECMAScript6 借鉴过来的很有用的特性，用于扩充组件 props 。
+
+比如：
+
+```javascript
+const attrs = {
+  href: 'http://example.org',
+  target: '_blank',
+};
+<a {...attrs}>Hello</a>
+```
+
+等同于
+
+```javascript
+const attrs = {
+  href: 'http://example.org',
+  target: '_blank',
+};
+<a href={attrs.href} target={attrs.target}>Hello</a>
+```
 
 ### Props
 
