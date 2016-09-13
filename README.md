@@ -232,7 +232,7 @@ const todos = ['Learn dva'];
 ```javascript
 const arr = ['a', 'b', 'c'];
 const [first, ...rest] = arr;
-arr;  // ['b', 'c']
+rest;  // ['b', 'c']
 ```
 
 还可收集函数参数为数组。
