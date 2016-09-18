@@ -798,8 +798,19 @@ Route Component 会有额外的 props 用以获取路由信息。
 ```javascript
 import { routerRedux } from 'dva/router';
 
-// In Effects
+// Inside Effects
 yield put(routerRedux.push('/logout'));
+
+// Outside Effects
+dispatch(routerRedux.push('/logout'));
+
+// With query
+routerRedux.push({
+  pathname: '/logout',
+  query: {
+    page: 2,
+  },
+});
 ```
 
 除 `push(location)` 外还有更多方法，详见 [react-router-redux](https://github.com/reactjs/react-router-redux#pushlocation-replacelocation-gonumber-goback-goforward)
