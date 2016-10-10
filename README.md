@@ -218,7 +218,7 @@ app.model({
 
 #### Spread Operator
 
-Sperad Operator 即 3 个点 `...`，有几种不同的使用方法。
+Spread Operator 即 3 个点 `...`，有几种不同的使用方法。
 
 可用于组装数组。
 
@@ -233,6 +233,10 @@ const todos = ['Learn dva'];
 const arr = ['a', 'b', 'c'];
 const [first, ...rest] = arr;
 rest;  // ['b', 'c']
+
+// With ignore
+const [first, , ...rest] = arr;
+rest;  // ['c']
 ```
 
 还可收集函数参数为数组。
@@ -242,6 +246,17 @@ function directions(first, ...rest) {
   console.log(rest);
 }
 directions('a', 'b', 'c');  // ['b', 'c'];
+```
+
+代替 apply。
+
+```javascript
+function (x, y, z) {}
+const args = [1,2,3];
+
+// 下面两句效果相同
+foo.apply(null, args);
+foo(...args);
 ```
 
 对于 Object 而言，用于组合成新的 Object 。(ES2017 stage-2 proposal)
