@@ -70,7 +70,7 @@
 * [dva 配置](#dva-配置)
   * [Redux Middleware](#redux-middleware)
   * [history](#history)
-    * [切换 hsitory 为 browserHistory](#切换-hsitory-为-browserhistory)
+    * [切换 history 为 browserHistory](#切换-history-为-browserhistory)
     * [去除 hashHistory 下的 _k 查询参数](#去除-hashhistory-下的-_k-查询参数)
 * [工具](#工具)
   * [通过 dva-cli 创建项目](#通过-dva-cli-创建项目)
@@ -108,7 +108,7 @@ const content = `
 #### 默认参数
 
 ```javascript
-function logActivity(activity='skiing') {
+function logActivity(activity = 'skiing') {
   console.log(activity);
 }
 
@@ -124,13 +124,13 @@ logActivity();  // skiing
 比如：
 
 ```javascript
-[1,2,3].map(x => x + 1);  // [2,3,4]
+[1, 2, 3].map(x => x + 1);  // [2, 3, 4]
 ```
 
 等同于：
 
 ```javascript
-[1,2,3].map((function(x) {
+[1, 2, 3].map((function(x) {
   return x + 1;
 }).bind(this));
 ```
@@ -324,7 +324,7 @@ app.model({
 
 ###  Stateless Functional Components
 
-React Component 有 3 种定义方式，分别是 `createElement`, `class` 和 `Stateless Functional Component`。推荐尽量使用最后一种，保持简洁和无状态。这是函数，不是 Object，没有 `this` 作用域，是 pure function 。
+React Component 有 3 种定义方式，分别是 `createElement`, `class` 和 `Stateless Functional Component`。推荐尽量使用最后一种，保持简洁和无状态。这是函数，不是 Object，没有 `this` 作用域，是 pure function。
 
 比如定义 App Component 。
 
@@ -847,7 +847,7 @@ const app = dva({
 
 ### history
 
-#### 切换 hsitory 为 browserHistory
+#### 切换 history 为 browserHistory
 
 ```javascript
 import { browserHistory } from 'dva/router';
