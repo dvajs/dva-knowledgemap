@@ -251,7 +251,7 @@ directions('a', 'b', 'c');  // ['b', 'c'];
 代替 apply。
 
 ```javascript
-function (x, y, z) {}
+function foo(x, y, z) {}
 const args = [1,2,3];
 
 // 下面两句效果相同
