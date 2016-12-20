@@ -384,7 +384,7 @@ JavaScript 表达式需要用 `{}` 括起来，会执行并返回结果。
 
 #### Mapping Arrays to JSX
 
-可以把数组隐射为 JSX 元素列表。
+可以把数组映射为 JSX 元素列表。
 
 ```javascript
 <ul>
