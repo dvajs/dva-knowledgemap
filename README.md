@@ -654,7 +654,7 @@ dva 里，effects 和 subscriptions 的抛错全部会走 `onError` hook，所�
 
 ```javascript
 const app = dva({
-  onError(e) {
+  onError(e, dispatch) {
     console.log(e.message);
   },
 });
