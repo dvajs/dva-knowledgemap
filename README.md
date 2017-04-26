@@ -790,7 +790,7 @@ function App() {}
 
 function mapStateToProps(state, ownProps) {
   return {
-    users: state.users,
+    users: state.users
   };
 }
 export default connect(mapStateToProps)(App);
