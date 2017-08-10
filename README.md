@@ -340,7 +340,7 @@ function App(props) {
 等同于：
 
 ```javascript
-class App extends React.Componnet {
+class App extends React.Component {
   handleClick() {
     this.props.dispatch({ type: 'app/create' });
   }
