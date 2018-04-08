@@ -4,6 +4,8 @@
 - Original Author: [dvajs/dva-knowledgemap@github](https://github.com/dvajs/dva-knowledgemap)
 - English Translation by: [crunchysoul@github](https://github.com/crunchysoul)
 
+- ["the dva.js Knowledgemap" 日本語版](./README_ja.md)
+
 > Notice：if you are using dva.js@2, please ignore the section below about Router,
 updating on the way...
 

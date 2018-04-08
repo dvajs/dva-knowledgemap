@@ -1,6 +1,7 @@
 # dva.js 知识导图
 
-[Read "the dva.js Knowledgemap" in English](./README_en.md)
+- [Read "the dva.js Knowledgemap" in English](./README_en.md)
+- ["the dva.js Knowledgemap" 日本語版](./README_ja.md)
 > 注：如果你使用 dva@2，请先忽略这里的路由部分，待更新。
 
 不知大家学 react 或 dva 时会不会有这样的疑惑：
