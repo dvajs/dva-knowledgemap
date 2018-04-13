@@ -25,8 +25,7 @@ This article provides you with all the practical information to understand
 [dva.js](https://github.com/dvajs/dva) and it's command line tool
 [dva-cli](https://github.com/dvajs/dva-cli), so you can start building projects
 like [dva-hackernews](https://github.com/dvajs/dva-hackernews) in no time
-without all the unnecessary extras in no time without all the unnecessary
-extras.
+without all the unnecessary extras.
 
 ## Table of Contents
 
