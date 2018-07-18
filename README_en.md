@@ -96,7 +96,7 @@ without all the unnecessary extras.
 
 #### const vs let
 
-Use `const` and `let` instead of `var`. `const` means that the identifier can’t be reassigned. `let` are used for reassignable variable. Beware the difference that `var` is scoped to a function, `const` and `let` are both scoped to the block。
+Use `const` and `let` instead of `var`. `const` means that the identifier can’t be reassigned. `let` is used for a reassignable variable. Beware the difference that `var` is scoped to a function, `const` and `let` are both scoped to the block。
 
 ```javascript
 const DELAY = 1000;
@@ -107,8 +107,8 @@ count = count + 1;
 
 #### Template literals
 
-Template literals(string interpolation and multi-line strings) provides convenient
-ways for coding string
+Template literals (string interpolation and multi-line strings) provides convenient
+ways for coding strings
 
 ```javascript
 const user = 'world';
@@ -276,7 +276,7 @@ foo.apply(null, args);
 foo(...args);
 ```
 
-Constructing(updating) new Object. (ES2017 stage-2 proposal)
+Constructing (updating) new Object. (ES2017 stage-2 proposal)
 
 ```javascript
 const foo = {
@@ -460,7 +460,7 @@ Data handling is a key concept in React and it can be overwhelming for beginners
 
 #### propTypes
 
-Since JavaScript is weakly typed, please declare props' types using propTpyes for type validation.
+Since JavaScript is weakly typed, please declare props' types using propTypes for type validation.
 
 ```javascript
 function App(props) {
