@@ -775,7 +775,7 @@ app.model({
 
 #### `path-to-regexp` Package
 
-For a complex url path, like `/users/:userId/search`, it's rather hard to match or get userID. [path-to-regexp](https://github.com/pillarjs/path-to-regexp)is recommended.
+For a complex url path, like `/users/:userId/search`, it's rather hard to match or get userID. [path-to-regexp](https://github.com/pillarjs/path-to-regexp) is recommended.
 
 ```javascript
 import pathToRegexp from 'path-to-regexp';
